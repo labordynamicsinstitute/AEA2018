@@ -1,0 +1,146 @@
+%John M. Abowd and Ian M. Schmutte
+%abowd-schmutte-privacy.tex
+%First: Feb 2013
+%Today: Sep 2014
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10pt]{article}
+%TCIDATA{OutputFilter=Latex.dll}
+%------------ External info is stored in these files. Edit at your own risk ---
+
+
+%--------------------
+%-------------------- Page Formatting ------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{plain}                     %%
+%%%%%%%% EXACT 1in MARGINS %%%%%%%  %%
+\setlength{\textwidth}{6.5in}     %%  %%
+\setlength{\oddsidemargin}{0in}   %%  %%
+\setlength{\evensidemargin}{0in}  %%  %%
+\setlength{\textheight}{8.75in}   %%  %%
+\setlength{\topmargin}{0in}       %%  %%
+\setlength{\headheight}{0in}      %%  %%
+\setlength{\headsep}{0in}         %%  %%
+\setlength{\footskip}{.5in}       %%  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{titlesec}
+%\titlespacing{\paragraph}{0.1pt}{0.1in}{0.1in}
+%-------------------- Document information
+%Insert document information here:
+\newcommand{\mytitle}{Reproducibility in the presence of confidential data}
+\newcommand{\myshorttitle}{Reproducibility}
+\newcommand{\myversion}{April 2017}  %\vspace*{3em} PRELIMINARY DRAFT -- PLEASE DO NOT CITE}%
+\newcommand{\mythanks}{
+Vilhuber acknowledges direct support 
+%from the U.S. Census Bureau and 
+from NSF Grant SES-1131848 (NCRN) and a grant from the Alfred P. Sloan Foundation.}
+
+\date{\myversion
+%\\ \vspace*{3em}{THIS VERSION PRELIMINARY AND INCOMPLETE: PLEASE DO NOT CITE}
+}
+%--------------------
+\input{formats}
+
+% suggest \usepackage{algorithm,algorithmic}
+%--------------------
+%try to eliminate the stupid * for \thanks in titlepage
+\renewcommand\footnotemark{}
+%--------------------
+%----------------------
+%To insert un-numbered footnotes (as on the title page)
+%ref: http://en.wikibooks.org/wiki/LaTeX/Formatting#cite_note-csli_footnotes-0
+\makeatletter
+\def\blfootnote{\xdef\@thefnmark{}\@footnotetext}
+\makeatother
+
+\newcommand{\ehref}[1]{(\href{mailto:#1}{#1})}
+\newcommand{\email}[1]{\ehref{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+	% \maketitle
+	% \begin{abstract}
+	% 	\input{EndMob-abstract}
+	% \end{abstract}
+	% \thispagestyle{empty}
+
+%	\begin{titlepage}
+		\begin{center}
+			\Large\MakeUppercase{\mytitle} \\ [.5cm]
+			\large
+			\textbf{\today\blfootnote{\mythanks}} \\ [2cm]
+			% PRELIMINARY DRAFT -- PLEASE DO NOT CITE \\ [2cm]
+		\end{center}
+%\end{titlepage}
+
+
+	%Disclaimer Page
+
+	%\lehddisclaimer
+	\thispagestyle{empty}
+	\singlespacing
+		\begin{center}
+			\textbf{Abstract} \\ [.5cm]
+		\end{center}
+		\input{abstract}
+	% ------------------------------ Main Document Body---------------
+	%\onehalfspacing
+	% \newpage
+	% \thispagestyle{empty}
+	% \input{\thisdoc-Notes}
+	% \addtocounter{section}{-1} %only when including the notes page
+	
+%	 \newpage
+	 \setcounter{page}{1}
+	%\doublespacing
+\newpage
+	\tableofcontents
+
+\section*{Session Organizer: Lars Vilhuber, Cornell University}
+\paragraph{Email} \email{lars.vilhuber@cornell.edu}
+
+\section*{Chair: J\"org Heining, Institute for Employment Research (IAB, Germany)}
+\paragraph{Email} \email{joerg.heining@iab.de}
+
+\newpage
+\section{Paper 1}
+\subsection{Assessing Effective Reproducibility at the American Economic Journal: Applied Economics}
+\label{sec:paper1}
+\input{paper1}
+\subsection{Discussant: Ian M. Schmutte}
+\paragraph{Email} \email{schmutte@uga.edu}
+
+\newpage
+\section{Paper 2}
+\subsection{Implementing Support for Reproducibility in a Restricted Access Environment: Case of the Federal Statistical Research Data Centers}
+\label{sec:paper2}
+\input{paper2}
+\subsection{Discussant: Victoria Stodden (To be confirmed)}
+
+\newpage
+\section{Paper 3}
+\subsection{How Amazon and Tripadvisor can help central banks }
+\label{sec:paper3}
+\input{paper3}
+\subsection{Discussant: TBD}
+
+
+	\singlespacing
+	% ------------------------------ Bibliography---------------------
+%	\bibliographystyle{\mybibstyle}
+%	\bibliography{bib/abowd-schmutte-privacy}
+
+% Appendix
+%\clearpage
+%\appendix
+%\section*{APPENDIX}
+%\setcounter{section}{1}
+%\label{sec:appendix}
+%\input{appendix}
+
+
+\end{document}
+
